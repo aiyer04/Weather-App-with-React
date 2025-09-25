@@ -1,0 +1,155 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'montserrat', sans-serif;
+}
+
+.app {
+  background-image: url('./assets/cool background.jpg');
+  background-size: cover;
+  background-position: bottom;
+  transition: 0.4 ease-out;
+}
+
+.app.warm{
+  background-image: url('./assets/warm background.jpg');
+  background-size: cover;
+  background-position: bottom;
+  transition: 0.4 ease-out;
+
+}
+
+main {
+  min-height: 100vh;
+  background-image: linear-gradient(rgba(0,0,0,0.2), rgba(0,0,0,0.75));
+  padding: 25px;
+} 
+
+.search-box {
+  width: 100%;
+  /* move the search box slightly down from the top */
+  margin: 12px 0 75px;
+}
+
+.search-box,
+.location-box {
+  display: flex;
+  justify-content: center;
+}
+
+.search-box .search-bar,
+.location-box {
+  width: 100%;
+  max-width: 420px; /* align with weather-card max-width */
+}
+
+.search-box .search-bar {
+  display: block;
+  width: 100%;
+  padding: 15px;
+
+  appearance: none;
+  background: none;
+  border: none;
+  outline: none;
+  
+  background-color: rgba(255, 255, 255, 0.5);
+  border-radius: 0px 0px 16px 16px;
+  margin-top: 8px;
+
+  box-shadow: 0px 5px  rgba(0,0,0,0.2);
+
+  color: #3f3f3f;
+  font-size: 20px;
+
+  transition: 0.4s ease;
+}
+
+.search-box .search-bar:focus {
+  background-color: rgba(255, 255, 255, 0.75);
+}
+
+/* Location/date placement: push farther down the page and center */
+.location-box {
+  margin-top: 18vh; /* moved significantly higher */
+  display: flex;
+  flex-direction: column; /* stack location above date */
+  align-items: center; /* horizontally center both lines */
+  text-align: center;
+  color: #ffffff;
+  text-shadow: 0 2px 6px rgba(0,0,0,0.6);
+  width: 100%;
+  max-width: 420px; /* match weather-card width so it's centered above the card */
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.location-box .location {
+  font-size: 28px;
+  font-weight: 600;
+  margin-bottom: 4px;
+}
+
+.location-box .date {
+  font-size: 16px;
+  opacity: 0.95;
+  margin-top: 2px;
+}
+
+/* Wrapper to center the weather card under the location/date */
+.weather-box {
+  margin-top: 8px; /* keep the weather card below the date */
+  text-align: center;
+  display: flex;
+  justify-content: center;
+}
+
+.weather-card {
+  color: #fff;
+  display: inline-block;
+  padding: 20px 30px;
+  background: rgba(255, 255, 255, 0.08); /* subtle translucent panel */
+  border-radius: 14px;
+  box-shadow: 0 8px 28px rgba(0,0,0,0.45);
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
+  min-width: 260px;
+  max-width: 420px;
+  width: 100%;
+}
+
+.weather-box .temp {
+  font-size: 64px;
+  font-weight: 700;
+  line-height: 1;
+}
+
+.weather-box .weather {
+  font-size: 20px;
+  margin-top: 6px;
+  opacity: 0.95;
+}
+
+/* Responsive adjustments */
+@media (max-width: 480px) {
+  .weather-card {
+    padding: 14px 18px;
+  }
+
+  .weather-box .temp {
+    font-size: 46px;
+  }
+
+  .weather-box .weather {
+    font-size: 16px;
+  }
+}
+
+.search-error {
+  font-size: 14px;
+  color: #ffdddd;
+}
